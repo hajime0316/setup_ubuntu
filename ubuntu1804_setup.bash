@@ -14,13 +14,6 @@ source install_vscode.bash
 echo "[SETUP INFO] Finish installing VS Code"
 echo ""
 
-# Dropboxのインストール
-echo "[SETUP INFO] Start installing Dropbox"
-echo ""
-source install_dropbox.bash
-echo "[SETUP INFO] Finish installing Dropbox"
-echo ""
-
 # terminatorのインストール
 echo "[SETUP INFO] Start installing terminator"
 echo ""
