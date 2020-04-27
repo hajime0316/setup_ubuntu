@@ -2,7 +2,6 @@
 
 # 関数定義
 sudo_knowing_password(){
-    # TODO: パスワード間違えたら終了する
     if ! ${password+:} false
     then
         printf "[sudo] $USER のパスワード: "
@@ -36,6 +35,9 @@ sudo_knowing_password apt install ros-melodic-desktop-full -y
 
 # rqt関連のすべてのパッケージをインストール
 sudo_knowing_password apt install ros-melodic-rqt* -y
+
+# rosdepをインストール
+sudo_knowing_password apt install python-rosdep
 
 # rosdepの初期化
 sudo_knowing_password rosdep init
