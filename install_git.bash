@@ -40,3 +40,12 @@ git config --global alias.graph "log --oneline --graph"
 
 # 日本語ファイル名が数字で表示される問題への対応 (Windows)
 git config --global core.quotepath off
+
+# ユーザー名とメールアドレスの設定を促す
+echo 'あとで以下のコマンドを実行して，名前とメールアドレスを設定してください．'
+echo '    git config --global user.name "自分の名前"'
+echo '    git config --global user.email "自分のメールアドレス"'
+echo ''
+echo '例:' 
+echo '    git git config --global user.name "John Doe"'
+echo '    git config --global user.email "johndoe@example.com"'
