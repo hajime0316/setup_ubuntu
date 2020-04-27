@@ -1,8 +1,7 @@
 #!/bin/bash
 
-sudo_knowing_password(){
-    if ! ${password+:} false
-    then
+sudo_knowing_password() {
+    if ! ${password+:} false; then
         printf "[sudo] $USER のパスワード: "
         read -s password
     fi
@@ -30,9 +29,9 @@ git config --global fetch.prune true
 # .gitignore_globalの設定
 git config --global core.excludesfile ~/.gitignore_global
 
-echo "*~" >> ~/.gitignore_global
-echo ".vscode/" >> ~/.gitignore_global
-echo ".catkin_tools/" >> ~/.gitignore_global
+echo "*~" >>~/.gitignore_global
+echo ".vscode/" >>~/.gitignore_global
+echo ".catkin_tools/" >>~/.gitignore_global
 
 # エイリアス設定
 git config --global alias.st "status -s"
@@ -46,6 +45,6 @@ echo 'あとで以下のコマンドを実行して，名前とメールアド�
 echo '    git config --global user.name "自分の名前"'
 echo '    git config --global user.email "自分のメールアドレス"'
 echo ''
-echo '例:' 
+echo '例:'
 echo '    git git config --global user.name "John Doe"'
 echo '    git config --global user.email "johndoe@example.com"'
