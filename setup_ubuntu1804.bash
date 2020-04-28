@@ -44,6 +44,13 @@ echo ""
 echo "[SETUP INFO] Finish installing kchmviewer"
 echo ""
 
+# gnuplotのインストール
+echo "[SETUP INFO] Start installing gnuplot"
+echo ""
+source install_gnuplot.bash
+echo "[SETUP INFO] Finish installing gnuplot"
+echo ""
+
 # trashコマンドのインストール
 # trashコマンドの導入
 # 不要なファイルをコマンドラインからゴミ箱へ移動させる
