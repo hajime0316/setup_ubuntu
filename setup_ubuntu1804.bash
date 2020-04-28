@@ -53,6 +53,13 @@ source install_trash_command.bash
 echo "[SETUP INFO] Finish installing trash command"
 echo ""
 
+# gitのインストール
+echo "[SETUP INFO] Start installing git"
+echo ""
+source install_git.bash
+echo "[SETUP INFO] Finish installing git"
+echo ""
+
 # プロンプトの設定
 echo "[SETUP INFO] Start prompt setup"
 echo ""
