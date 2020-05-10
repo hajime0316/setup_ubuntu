@@ -51,6 +51,14 @@ echo ""
 echo "[SETUP INFO] Finish installing kchmviewer"
 echo ""
 
+# Google Chromeのインストール
+# 色々便利なブラウザ
+echo "[SETUP INFO] Start installing google-chrome"
+echo ""
+source install_google_chrome.bash
+echo "[SETUP INFO] Finish installing kchmviewer"
+echo ""
+
 # trashコマンドのインストール
 # trashコマンドの導入
 # 不要なファイルをコマンドラインからゴミ箱へ移動させる
