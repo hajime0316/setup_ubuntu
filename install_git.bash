@@ -1,14 +1,18 @@
 #!/bin/bash
 
-# 変数定義
-readonly USER_NAME="Hajime"
-readonly USER_EMAIL="hajime0316@s.okayama-u.ac.jp"
+sudo_knowing_password() {
+    if ! ${password+:} false; then
+        printf "[sudo] $USER のパスワード: "
+        read -s password
+    fi
 
-# user name
-git config --global user.name $USER_NAME
+    echo "$password" | sudo -S $*
+}
 
-# user email
-git config --global user.email $USER_EMAIL
+set -e
+
+sudo_knowing_password apt update
+sudo_knowing_password apt install git
 
 # エディターにvscodeを使う
 git config --global core.editor "code --wait"
@@ -25,9 +29,9 @@ git config --global fetch.prune true
 # .gitignore_globalの設定
 git config --global core.excludesfile ~/.gitignore_global
 
-echo "*~" >> ~/.gitignore_global
-echo ".vscode/" >> ~/.gitignore_global
-echo ".catkin_tools/" >> ~/.gitignore_global
+echo "*~" >>~/.gitignore_global
+echo ".vscode/" >>~/.gitignore_global
+echo ".catkin_tools/" >>~/.gitignore_global
 
 # エイリアス設定
 git config --global alias.st "status -s"
@@ -35,3 +39,12 @@ git config --global alias.graph "log --oneline --graph"
 
 # 日本語ファイル名が数字で表示される問題への対応 (Windows)
 git config --global core.quotepath off
+
+# ユーザー名とメールアドレスの設定を促す
+echo 'あとで以下のコマンドを実行して，名前とメールアドレスを設定してください．'
+echo '    git config --global user.name "自分の名前"'
+echo '    git config --global user.email "自分のメールアドレス"'
+echo ''
+echo '例:'
+echo '    git git config --global user.name "John Doe"'
+echo '    git config --global user.email "johndoe@example.com"'

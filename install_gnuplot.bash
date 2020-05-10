@@ -13,4 +13,4 @@ sudo_knowing_password() {
 }
 
 sudo_knowing_password apt update
-sudo_knowing_password apt install -y nautilus-dropbox
+sudo_knowing_password apt install -y gnuplot

@@ -14,13 +14,6 @@ source install_vscode.bash
 echo "[SETUP INFO] Finish installing VS Code"
 echo ""
 
-# Dropboxのインストール
-echo "[SETUP INFO] Start installing Dropbox"
-echo ""
-source install_dropbox.bash
-echo "[SETUP INFO] Finish installing Dropbox"
-echo ""
-
 # terminatorのインストール
 echo "[SETUP INFO] Start installing terminator"
 echo ""
@@ -42,12 +35,17 @@ source install_bleachbit.bash
 echo "[SETUP INFO] Finish installing bleachbit"
 echo ""
 
-# kchmviewerのインストール
-# chmファイル（ドキュメントファイル）の閲覧
-echo "[SETUP INFO] Start installing kchmviewer"
+# gnuplotのインストール
+echo "[SETUP INFO] Start installing gnuplot"
 echo ""
-# TODO: install_kchmviewer.bashの作成
-# source install_kchmviewer.bash
+source install_gnuplot.bash
+echo "[SETUP INFO] Finish installing gnuplot"
+
+# Google Chromeのインストール
+# 色々便利なブラウザ
+echo "[SETUP INFO] Start installing google-chrome"
+echo ""
+source install_google_chrome.bash
 echo "[SETUP INFO] Finish installing kchmviewer"
 echo ""
 
@@ -58,6 +56,13 @@ echo "[SETUP INFO] Start installing trash command"
 echo ""
 source install_trash_command.bash
 echo "[SETUP INFO] Finish installing trash command"
+echo ""
+
+# gitのインストール
+echo "[SETUP INFO] Start installing git"
+echo ""
+source install_git.bash
+echo "[SETUP INFO] Finish installing git"
 echo ""
 
 # プロンプトの設定
