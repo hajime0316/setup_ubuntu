@@ -12,4 +12,5 @@ sudo_knowing_password() {
     echo "$password" | sudo -S $*
 }
 
+sudo_knowing_password apt update
 sudo_knowing_password apt install -y gnuplot

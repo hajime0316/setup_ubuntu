@@ -11,4 +11,5 @@ sudo_knowing_password() {
 
 set -e
 
+sudo_knowing_password apt update
 sudo_knowing_password apt install fonts-ricty-diminished
