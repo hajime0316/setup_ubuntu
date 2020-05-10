@@ -35,15 +35,6 @@ source install_bleachbit.bash
 echo "[SETUP INFO] Finish installing bleachbit"
 echo ""
 
-# kchmviewerのインストール
-# chmファイル（ドキュメントファイル）の閲覧
-echo "[SETUP INFO] Start installing kchmviewer"
-echo ""
-# TODO: install_kchmviewer.bashの作成
-# source install_kchmviewer.bash
-echo "[SETUP INFO] Finish installing kchmviewer"
-echo ""
-
 # gnuplotのインストール
 echo "[SETUP INFO] Start installing gnuplot"
 echo ""
