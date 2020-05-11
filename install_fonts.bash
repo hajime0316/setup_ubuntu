@@ -13,3 +13,4 @@ set -e
 
 sudo_knowing_password apt update
 sudo_knowing_password apt install fonts-ricty-diminished
+sudo_knowing_password apt install -y fonts-migmix
