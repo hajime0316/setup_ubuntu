@@ -82,6 +82,7 @@ introduce_fonts.bash
 echo "[SETUP INFO] Setup workspace switching key bindings"
 echo ""
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 
 # ホームフォルダ内のフォルダ名を英語に変更
 # 再起動時にフォルダ名を日本語に戻すかどうか聞いてくるので，次回から「表示しない」
