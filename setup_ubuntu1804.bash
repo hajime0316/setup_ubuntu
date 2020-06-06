@@ -46,7 +46,7 @@ echo "[SETUP INFO] Finish installing gnuplot"
 echo "[SETUP INFO] Start installing google-chrome"
 echo ""
 source install_google_chrome.bash
-echo "[SETUP INFO] Finish installing kchmviewer"
+echo "[SETUP INFO] Finish installing google-chrome"
 echo ""
 
 # trashコマンドのインストール
