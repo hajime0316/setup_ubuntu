@@ -49,6 +49,14 @@ source install_google_chrome.bash
 echo "[SETUP INFO] Finish installing google-chrome"
 echo ""
 
+# pintaのインストール
+# ペイントソフト
+echo "[SETUP INFO] Start installing pinta"
+echo ""
+source install_pinta.bash
+echo "[SETUP INFO] Finish installing pinta"
+echo ""
+
 # trashコマンドのインストール
 # trashコマンドの導入
 # 不要なファイルをコマンドラインからゴミ箱へ移動させる
