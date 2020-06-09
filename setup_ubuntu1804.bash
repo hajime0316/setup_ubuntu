@@ -108,4 +108,4 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
 # 参考にしたサイト: https://qiita.com/taiko19xx/items/d1a001bfc25245b91354
 echo "[SETUP INFO] Fix japanese dir name"
 echo ""
-# LANG=C xdg-user-dirs-gtk-update
+LANG=C xdg-user-dirs-gtk-update
