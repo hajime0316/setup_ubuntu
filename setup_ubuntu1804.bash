@@ -84,14 +84,16 @@ echo ""
 # プロンプトの設定
 echo "[SETUP INFO] Start prompt setup"
 echo ""
-prompt_show_git_status.bash
+source prompt_show_git_status.bash
 echo "[SETUP INFO] Finish prompt setup"
 echo ""
 
 # フォントの導入
-echo "[SETUP INFO] Introduce fonts"
+echo "[SETUP INFO] Start installing fonts"
 echo ""
-introduce_fonts.bash
+source install_fonts.bash
+echo "[SETUP INFO] Finish installing fonts"
+echo ""
 
 # ctrl + alt + right/leftが今は無いはずの左右ワークスペース切り替えに設定されているため，これを解除
 # 参考：https://docs.oracle.com/cd/E19683-01/817-0280/6mg3enmj4/index.html
