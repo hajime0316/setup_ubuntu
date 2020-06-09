@@ -73,6 +73,14 @@ source install_git.bash
 echo "[SETUP INFO] Finish installing git"
 echo ""
 
+# vcstoolのインストール
+# バージョン管理のソフトウェア
+echo "[SETUP INFO] Start installing vcstool"
+echo ""
+source install_vcstool.bash
+echo "[SETUP INFO] Finish installing vcstool"
+echo ""
+
 # プロンプトの設定
 echo "[SETUP INFO] Start prompt setup"
 echo ""
