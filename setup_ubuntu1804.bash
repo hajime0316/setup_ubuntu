@@ -95,6 +95,14 @@ source install_fonts.bash
 echo "[SETUP INFO] Finish installing fonts"
 echo ""
 
+# crontabの設定
+# 自動で実行するスクリプトをcronに設定する
+echo "[SETUP INFO] Start cron setting"
+echo ""
+./cron_setting.bash
+echo "[SETUP INFO] Finish cron setting"
+echo ""
+
 # ctrl + alt + right/leftが今は無いはずの左右ワークスペース切り替えに設定されているため，これを解除
 # 参考：https://docs.oracle.com/cd/E19683-01/817-0280/6mg3enmj4/index.html
 echo "[SETUP INFO] Setup workspace switching key bindings"
