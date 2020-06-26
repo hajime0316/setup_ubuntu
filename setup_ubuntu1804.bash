@@ -49,6 +49,14 @@ source install_google_chrome.bash
 echo "[SETUP INFO] Finish installing google-chrome"
 echo ""
 
+# kolourpaintのインストール
+# ペイントツール
+echo "[SETUP INFO] Start installing kolourpaint"
+echo ""
+source install_kolourpaint.bash
+echo "[SETUP INFO] Finish installing kolourpaint"
+echo ""
+
 # trashコマンドのインストール
 # trashコマンドの導入
 # 不要なファイルをコマンドラインからゴミ箱へ移動させる
