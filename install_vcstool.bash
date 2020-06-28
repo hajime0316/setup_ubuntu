@@ -15,7 +15,7 @@ sudo_knowing_password() {
 sudo_knowing_password sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo_knowing_password apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xAB17C654
 sudo_knowing_password apt update
-sudo_knowing_password apt install python3-vcstool
+sudo_knowing_password apt install -y python3-vcstool
 
 echo '# vcs toolのオートコンプリート設定' >> ~/.bashrc
 echo 'source /usr/share/vcstool-completion/vcs.bash' >> ~/.bashrc
