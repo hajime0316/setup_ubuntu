@@ -33,9 +33,6 @@ sudo_knowing_password apt update
 # ROS本体のインストール
 sudo_knowing_password apt install ros-melodic-desktop-full -y
 
-# rqt関連のすべてのパッケージをインストール
-sudo_knowing_password apt install ros-melodic-rqt* -y
-
 # rosdepをインストール
 sudo_knowing_password apt install python-rosdep
 
