@@ -17,6 +17,6 @@ sudo_knowing_password apt-key adv --keyserver hkp://pool.sks-keyservers.net --re
 sudo_knowing_password apt update
 sudo_knowing_password apt install -y python3-vcstool
 
-echo '# vcs toolのオートコンプリート設定' >> ~/.bashrc
+echo '# vcstoolのオートコンプリート設定' >> ~/.bashrc
 echo 'source /usr/share/vcstool-completion/vcs.bash' >> ~/.bashrc
 echo '' >> ~/.bashrc
