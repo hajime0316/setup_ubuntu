@@ -66,6 +66,15 @@ source install_trash_command.bash
 echo "[SETUP INFO] Finish installing trash command"
 echo ""
 
+# treeコマンドのインストール
+# treeコマンドの導入
+# ディレクトリ構造を図的に表示してくれる
+echo "[SETUP INFO] Start installing tree command"
+echo ""
+source install_tree_command.bash
+echo "[SETUP INFO] Finish installing tree command"
+echo ""
+
 # gitのインストール
 echo "[SETUP INFO] Start installing git"
 echo ""
