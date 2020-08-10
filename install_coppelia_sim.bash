@@ -16,4 +16,4 @@ rm "$FILE_NAME_WITHOUT_EXTENSION.tar.xz"
 # .bashrcにエイリアスを書く
 echo "" >>~/.bashrc
 echo "# CoppeliaSimを起動するエイリアス" >>~/.bashrc
-echo "alias copsim='~/CoppeliaSim/coppeliaSim.sh'" >>~/.bashrc
+echo "alias copsim='~/${LOCAL_COPPELIA_SIM_DIR}/coppeliaSim.sh'" >>~/.bashrc
