@@ -118,11 +118,13 @@ echo "[SETUP INFO] Setup workspace switching key bindings"
 echo ""
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
+echo ""
 
 # CapsキーをCtrlキーに変更
 # 参考：https://linuxfan.info/capslock-ctrl
 echo "[SETUP INFO] Change Caps key to Ctrl key"
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+echo ""
 
 # ファイルを開くopenコマンドの定義
 echo "[SETUP INFO] Define open command"
