@@ -13,6 +13,6 @@ mv "$FILE_NAME_WITHOUT_EXTENSION" ~/V-REP
 rm "$FILE_NAME_WITHOUT_EXTENSION.tar.xz"
 
 # .profileにパスの設定を書く
-echo ""
-echo "# V-REPへのパス"
+echo "" >> ~/.profile
+echo "# V-REPへのパス" >> ~/.profile
 echo 'PATH="$HOME/V-REP:$PATH"' >> ~/.profile
