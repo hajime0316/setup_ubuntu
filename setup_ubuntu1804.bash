@@ -131,6 +131,7 @@ echo "[SETUP INFO] Define open command"
 echo ""
 echo "# ファイルを開くopenコマンドの定義" >>~/.bashrc
 echo "alias open=xdg-open" >>~/.bashrc
+echo "" >>~/.bashrc
 echo ""
 
 # ホームフォルダ内のフォルダ名を英語に変更
