@@ -21,6 +21,13 @@ source install_atom.bash
 echo "[SETUP INFO] Finish installing Atom"
 echo ""
 
+# SimpleScreenRecorderのインストール
+echo "[SETUP INFO] Start installing SimpleScreenRecorder"
+echo ""
+source install_screen_recorder.bash
+echo "[SETUP INFO] Finish installing SimpleScreenRecorder"
+echo ""
+
 # trashコマンドのインストール
 # trashコマンドの導入
 # 不要なファイルをコマンドラインからゴミ箱へ移動させる
