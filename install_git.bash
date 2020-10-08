@@ -12,7 +12,7 @@ sudo_knowing_password() {
 set -e
 
 sudo_knowing_password apt update
-sudo_knowing_password apt install git
+sudo_knowing_password apt install -y git
 
 # エディターにvscodeを使う
 git config --global core.editor "code --wait"
