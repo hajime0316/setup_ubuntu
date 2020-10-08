@@ -16,7 +16,7 @@ sudo_knowing_password() {
 }
 
 sudo_knowing_password apt update
-sudo_knowing_password apt install python-pip
+sudo_knowing_password apt install -y python-pip
 sudo -H pip install vcstool
 
 echo '# vcstoolのオートコンプリート設定' >> ~/.bashrc
