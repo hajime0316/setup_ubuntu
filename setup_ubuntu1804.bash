@@ -14,6 +14,13 @@ source install_vscode.bash
 echo "[SETUP INFO] Finish installing VS Code"
 echo ""
 
+# Atomのインストール
+echo "[SETUP INFO] Start installing Atom"
+echo ""
+source install_atom.bash
+echo "[SETUP INFO] Finish installing Atom"
+echo ""
+
 # terminatorのインストール
 echo "[SETUP INFO] Start installing terminator"
 echo ""
