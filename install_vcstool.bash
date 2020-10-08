@@ -19,6 +19,6 @@ sudo_knowing_password apt update
 sudo_knowing_password apt install -y python-pip
 sudo -H pip install vcstool
 
-echo '# vcstoolのオートコンプリート設定' >> ~/.bashrc
+echo '# vcstoolの入力補完を有効化' >> ~/.bashrc
 echo 'source /usr/local/share/vcstool-completion/vcs.bash' >> ~/.bashrc
 echo '' >> ~/.bashrc
