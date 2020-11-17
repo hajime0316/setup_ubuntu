@@ -56,6 +56,13 @@ echo "" >> ~/.bashrc
 echo "# catkin tools初期化" >> ~/.bashrc
 echo 'alias catkin_init_workspace="catkin build && catkin config --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"' >> ~/.bashrc
 
+# ラズパイを使うときのROS設定メモ
+echo '' >> ~/.bashrc
+echo '## ラズパイを使うときのROS環境変数設定' >> ~/.bashrc
+echo '# export ROS_IP=<このPCのIPアドレス>' >> ~/.bashrc
+echo '# export ROS_MASTER_URI=http://${ROS_IP}:11311' >> ~/.bashrc
+echo '# export ROSLAUNCH_SSH_UNKNOWN=1' >> ~/.bashrc
+
 # スクリプト作るうえで参考にしたサイト
 # https://keens.github.io/blog/2015/06/17/shell_scriptwokakutokinikiwotsuketaikoto/
 # https://hacknote.jp/archives/31390/
