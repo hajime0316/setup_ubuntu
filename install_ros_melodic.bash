@@ -54,7 +54,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 # catkin_init_workspaceコマンドをcatkin tools用に書き換える
 echo "" >> ~/.bashrc
 echo "# catkin tools初期化" >> ~/.bashrc
-echo 'alias catkin_init_workspace="catkin build && catkin config --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_FLAGS=\"-Wall\""' >> ~/.bashrc
+echo 'alias catkin_init_workspace="catkin build && catkin config --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"' >> ~/.bashrc
 
 # スクリプト作るうえで参考にしたサイト
 # https://keens.github.io/blog/2015/06/17/shell_scriptwokakutokinikiwotsuketaikoto/
