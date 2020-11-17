@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # 関数定義
-sudo_knowing_password(){
-    if ! ${password+:} false
-    then
+sudo_knowing_password() {
+    if ! ${password+:} false; then
         printf "[sudo] $USER のパスワード: "
         read -s password
     fi
@@ -47,21 +46,21 @@ sudo_knowing_password apt install python-rosinstall -y
 sudo_knowing_password apt install python-catkin-tools -y
 
 # 環境のセットアップ
-echo "# ROS 環境のセットアップ" >> ~/.bashrc
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-echo "" >> ~/.bashrc
+echo "# ROS 環境のセットアップ" >>~/.bashrc
+echo "source /opt/ros/melodic/setup.bash" >>~/.bashrc
+echo "" >>~/.bashrc
 
 # catkin_init_workspaceコマンドをcatkin tools用に書き換える
-echo "# catkin tools初期化" >> ~/.bashrc
-echo 'alias catkin_init_workspace="catkin build && catkin config --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"' >> ~/.bashrc
-echo "" >> ~/.bashrc
+echo "# catkin tools初期化" >>~/.bashrc
+echo 'alias catkin_init_workspace="catkin build && catkin config --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"' >>~/.bashrc
+echo "" >>~/.bashrc
 
 # ラズパイを使うときのROS設定メモ
-echo '## ラズパイを使うときのROS環境変数設定' >> ~/.bashrc
-echo '# export ROS_IP=<このPCのIPアドレス>' >> ~/.bashrc
-echo '# export ROS_MASTER_URI=http://${ROS_IP}:11311' >> ~/.bashrc
-echo '# export ROSLAUNCH_SSH_UNKNOWN=1' >> ~/.bashrc
-echo '' >> ~/.bashrc
+echo '## ラズパイを使うときのROS環境変数設定' >>~/.bashrc
+echo '# export ROS_IP=<このPCのIPアドレス>' >>~/.bashrc
+echo '# export ROS_MASTER_URI=http://${ROS_IP}:11311' >>~/.bashrc
+echo '# export ROSLAUNCH_SSH_UNKNOWN=1' >>~/.bashrc
+echo '' >>~/.bashrc
 
 # スクリプト作るうえで参考にしたサイト
 # https://keens.github.io/blog/2015/06/17/shell_scriptwokakutokinikiwotsuketaikoto/
