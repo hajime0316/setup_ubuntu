@@ -147,6 +147,18 @@ echo ""
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "<Primary>t"
 echo ""
 
+# 電源管理の設定
+echo "[SETUP INFO] Power management settings"
+echo ""
+# バッテリー駆動時は20分でサスペンド
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1200
+# 電源接続時はサスペンドしない
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+# ブランクスクリーンにしない
+gsettings set org.gnome.desktop.session idle-delay 0
+echo ""
+
 # ホームフォルダ内のフォルダ名を英語に変更
 # 再起動時にフォルダ名を日本語に戻すかどうか聞いてくるので，次回から「表示しない」
 # にチェックを入れて「古い名前のままにする」をクリックする．
