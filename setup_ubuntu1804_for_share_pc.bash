@@ -81,3 +81,9 @@ echo ""
 echo "[SETUP INFO] Change Caps key to Ctrl key"
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 echo ""
+
+# 端末を起動するショートカットキーを「ctrl + T」に変更
+echo "[SETUP INFO] Change key bindings for terminal"
+echo ""
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "<Primary>t"
+echo ""
