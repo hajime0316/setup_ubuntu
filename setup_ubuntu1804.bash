@@ -141,6 +141,12 @@ echo "alias open=xdg-open" >>~/.bashrc
 echo "" >>~/.bashrc
 echo ""
 
+# 端末を起動するショートカットキーを「ctrl + T」に変更
+echo "[SETUP INFO] Change key bindings for terminal"
+echo ""
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "<Primary>t"
+echo ""
+
 # ホームフォルダ内のフォルダ名を英語に変更
 # 再起動時にフォルダ名を日本語に戻すかどうか聞いてくるので，次回から「表示しない」
 # にチェックを入れて「古い名前のままにする」をクリックする．
