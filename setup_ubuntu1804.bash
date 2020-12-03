@@ -154,3 +154,4 @@ echo ""
 echo "[SETUP INFO] Fix japanese dir name"
 echo ""
 LANG=C xdg-user-dirs-gtk-update
+echo ""
