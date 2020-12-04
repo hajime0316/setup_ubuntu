@@ -7,7 +7,8 @@ set -e
 FILE_NAME_WITHOUT_EXTENSION="CoppeliaSim_Edu_V4_1_0_Ubuntu18_04"
 LOCAL_COPPELIA_SIM_DIR="$HOME/CoppeliaSim"
 
-wget "https://coppeliarobotics.com/files/${FILE_NAME_WITHOUT_EXTENSION}.tar.xz"
+curl "https://coppeliarobotics.com/files/${FILE_NAME_WITHOUT_EXTENSION}.tar.xz" -O
+# wget "https://coppeliarobotics.com/files/${FILE_NAME_WITHOUT_EXTENSION}.tar.xz"
 
 tar Jxvf "$FILE_NAME_WITHOUT_EXTENSION.tar.xz"
 mv "$FILE_NAME_WITHOUT_EXTENSION" "$LOCAL_COPPELIA_SIM_DIR"
