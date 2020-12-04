@@ -13,10 +13,11 @@ sudo_knowing_password() {
     echo "$password" | sudo -S $*
 }
 
+# curlのインストール
 sudo_knowing_password apt update
 sudo_knowing_password apt install -y curl
 
-# V-REP本体のインストール
+# CoppeliaSim本体のインストール
 FILE_NAME_WITHOUT_EXTENSION="CoppeliaSim_Edu_V4_1_0_Ubuntu18_04"
 LOCAL_COPPELIA_SIM_DIR="$HOME/CoppeliaSim"
 
