@@ -6,20 +6,20 @@ Ubuntu 18.04で快適に開発するために必要なソフトウェアのイ�
 
 `setup_ubuntu1804.bash`スクリプトを実行して，必要なソフトウェアのインストールと設定を行う．
 
-~~~sh
+```sh
 setup_ubuntu1804.bash
-~~~
+```
 
 これだけでは以下のソフトウェアはインストールされない．
 
 - ROS Melodic
-- V-REP
+- CoppeliaSim
 - Dropbox
 
 これらは個別にインストールスクリプトを動作させることでインストールできる．
 
-~~~sh
-install_ros_melodic.bash
-install_vrep.bash
-install_dropbox.bash
-~~~
+```sh
+./install_ros_melodic.bash
+./install_coppelia_sim.bash
+./install_dropbox.bash
+```
