@@ -18,5 +18,6 @@ sudo_knowing_password apt update
 # 理由：aptからインストールしたricty-diminishedはバッククオートの表示に不具合がある
 wget https://github.com/edihbrandon/RictyDiminished/archive/master.zip
 unzip master.zip
+mkdir -p ~/.fonts
 mv RictyDiminished-master ~/.fonts/RictyDiminished
 rm master.zip
