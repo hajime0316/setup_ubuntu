@@ -11,6 +11,9 @@ sudo_knowing_password() {
 
 set -e
 
-sudo_knowing_password add-apt-repository ppa:webupd8team/atom
+sudo_knowing_password apt update # 最初にsudoにパスワードを渡すために必要
+
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo_knowing_password sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 sudo_knowing_password apt update
-sudo_knowing_password apt install -y atom
+sudo_knowing_password apt install atom -y
