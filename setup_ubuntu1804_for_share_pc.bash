@@ -7,6 +7,18 @@ if ! ${password+:} false; then
     read -s password
 fi
 
+# 電源管理の設定
+echo "[SETUP INFO] Power management settings"
+echo ""
+# バッテリー駆動時は20分でサスペンド
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1200
+# 電源接続時はサスペンドしない
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+# ブランクスクリーンにしない
+gsettings set org.gnome.desktop.session idle-delay 0
+echo ""
+
 # VS Codeのインストール
 echo "[SETUP INFO] Start installing VS Code"
 echo ""
@@ -86,16 +98,4 @@ echo ""
 echo "[SETUP INFO] Change key bindings for terminal"
 echo ""
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "<Primary>t"
-echo ""
-
-# 電源管理の設定
-echo "[SETUP INFO] Power management settings"
-echo ""
-# バッテリー駆動時は20分でサスペンド
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'suspend'
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1200
-# 電源接続時はサスペンドしない
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
-# ブランクスクリーンにしない
-gsettings set org.gnome.desktop.session idle-delay 0
 echo ""
