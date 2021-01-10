@@ -73,6 +73,13 @@ source install_vcstool.bash
 echo "[SETUP INFO] Finish installing vcstool"
 echo ""
 
+# plotjuggerのインストール
+echo "[SETUP INFO] Start installing plotjuggler"
+echo ""
+source install_plotjuggler.bash
+echo "[SETUP INFO] Finish installing plotjuggler"
+echo ""
+
 # プロンプトの設定
 echo "[SETUP INFO] Start prompt setup"
 echo ""
