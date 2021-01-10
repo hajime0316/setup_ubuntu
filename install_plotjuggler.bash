@@ -1,8 +1,5 @@
 #!/bin/bash
 
-set -e
-
-# 関数定義
 sudo_knowing_password() {
     if ! ${password+:} false; then
         printf "[sudo] $USER のパスワード: "
@@ -12,5 +9,6 @@ sudo_knowing_password() {
     echo "$password" | sudo -S "$@"
 }
 
-sudo_knowing_password apt update
-sudo_knowing_password apt install -y gnuplot
+set -e
+
+sudo_knowing_password snap install plotjuggler

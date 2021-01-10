@@ -6,11 +6,18 @@ sudo_knowing_password() {
         read -s password
     fi
 
-    echo "$password" | sudo -S $*
+    echo "$password" | sudo -S "$@"
 }
 
 set -e
 
 sudo_knowing_password apt update
-sudo_knowing_password apt install -y fonts-ricty-diminished
-sudo_knowing_password apt install -y fonts-migmix
+
+# ricty-diminishedは以下のGitHubから取得するようにする
+# https://github.com/edihbrandon/RictyDiminished
+# 理由：aptからインストールしたricty-diminishedはバッククオートの表示に不具合がある
+wget https://github.com/edihbrandon/RictyDiminished/archive/master.zip
+unzip master.zip
+mkdir -p ~/.fonts
+mv RictyDiminished-master ~/.fonts/RictyDiminished
+rm master.zip
