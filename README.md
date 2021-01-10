@@ -4,22 +4,32 @@ Ubuntu 18.04で快適に開発するために必要なソフトウェアのイ�
 
 ## 使い方
 
+### 共用PC
+
+`setup_ubuntu1804_for_share_pc.bash`スクリプトを実行して，必要なソフトウェアのインストールと設定を行う．
+
+```sh
+./setup_ubuntu1804_for_share_pc.bash
+```
+
+### 個人用PC
+
 `setup_ubuntu1804.bash`スクリプトを実行して，必要なソフトウェアのインストールと設定を行う．
 
-~~~sh
-setup_ubuntu1804.bash
-~~~
+```sh
+./setup_ubuntu1804.bash
+```
 
 これだけでは以下のソフトウェアはインストールされない．
 
 - ROS Melodic
-- V-REP
+- CoppeliaSim
 - Dropbox
 
 これらは個別にインストールスクリプトを動作させることでインストールできる．
 
-~~~sh
-install_ros_melodic.bash
-install_vrep.bash
-install_dropbox.bash
-~~~
+```sh
+./install_ros_melodic.bash
+./install_coppelia_sim.bash
+./install_dropbox.bash
+```
