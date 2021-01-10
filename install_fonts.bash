@@ -6,7 +6,7 @@ sudo_knowing_password() {
         read -s password
     fi
 
-    echo "$password" | sudo -S $*
+    echo "$password" | sudo -S "$@"
 }
 
 set -e
