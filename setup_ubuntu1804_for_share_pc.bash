@@ -91,6 +91,7 @@ echo ""
 # CapsキーをCtrlキーに変更
 # 参考：https://linuxfan.info/capslock-ctrl
 echo "[SETUP INFO] Change Caps key to Ctrl key"
+echo ""
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 echo ""
 
