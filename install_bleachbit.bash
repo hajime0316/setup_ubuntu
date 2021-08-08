@@ -24,4 +24,4 @@ SCRIPT_DIR=$(
 if [ ! -d ~/.config/bleachbit ]; then
     mkdir -p ~/.config/bleachbit
 fi
-cat "$SCRIPT_DIR/config_files/bleachbit.conf" >> ~/.config/bleachbit/bleachbit.ini
+cat "$SCRIPT_DIR/config_files/bleachbit.conf" > ~/.config/bleachbit/bleachbit.ini
