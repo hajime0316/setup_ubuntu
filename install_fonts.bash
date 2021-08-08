@@ -11,13 +11,10 @@ sudo_knowing_password() {
 
 set -e
 
-sudo_knowing_password apt update
-
-# ricty-diminishedは以下のGitHubから取得するようにする
-# https://github.com/edihbrandon/RictyDiminished
-# 理由：aptからインストールしたricty-diminishedはバッククオートの表示に不具合がある
-wget https://github.com/edihbrandon/RictyDiminished/archive/master.zip
-unzip master.zip
+# config_files/fontsからフォントファイルをコピーする
+SCRIPT_DIR=$(
+    cd $(dirname $0)
+    pwd
+)
 mkdir -p ~/.fonts
-mv RictyDiminished-master ~/.fonts/RictyDiminished
-rm master.zip
+cp -r ${SCRIPT_DIR}/config_files/fonts/* ~/.fonts
