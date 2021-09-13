@@ -48,5 +48,10 @@ while IFS= read line; do
         echo 2
     fi
 
-    echo "${line}" >>test.lua
+    echo "${line}" >>"${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.tmp"
 done <"${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua"
+
+mv "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua" "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.bak"
+mv "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.tmp" "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua"
+
+chmod a+x "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua"
