@@ -44,7 +44,9 @@ while IFS= read line; do
         echo 1
     elif "${flag}"; then
         flag=false
-        line="--${line}"
+        if [[ ! "${line}" =~ ^--.*$ ]]; then
+            line="--${line}"
+        fi
         echo 2
     fi
 
