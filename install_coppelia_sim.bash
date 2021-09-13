@@ -44,7 +44,7 @@ while IFS= read line; do
         echo 1
     elif "${flag}"; then
         flag=false
-        line="--     return {autoStart=false}"
+        line="--${line}"
         echo 2
     fi
 

@@ -1621,7 +1621,7 @@ function onDlgClose()
 end
 
 function sysCall_info()
---     return {autoStart=false}
+--    return {autoStart=false}
 end
 
 function sysCall_addOnScriptSuspend()
