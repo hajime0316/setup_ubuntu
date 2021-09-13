@@ -38,7 +38,7 @@ echo "" >>~/.bashrc
 # (remove the sysCall_info function in lua/b0RemoteApiServer.lua)
 # https://www.coppeliarobotics.com/helpFiles/en/b0RemoteApiServerSide.htm
 flag=false
-while read line; do
+while IFS= read line; do
     if [ "${line}" = "function sysCall_info()" ]; then
         flag=true
         echo 1
