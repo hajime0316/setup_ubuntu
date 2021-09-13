@@ -37,12 +37,12 @@ echo "" >>~/.bashrc
 # b0RemoteApiServerのAddOnを起動時に自動でロードするようにする
 # (remove the sysCall_info function in lua/b0RemoteApiServer.lua)
 # https://www.coppeliarobotics.com/helpFiles/en/b0RemoteApiServerSide.htm
+flag=false
 while read line; do
-    flag=false
     if [ "${line}" = "function sysCall_info()" ]; then
         flag=true
         echo 1
-    elif $flag; then
+    elif "${flag}"; then
         flag=false
         line="--     return {autoStart=false}"
         echo 2
