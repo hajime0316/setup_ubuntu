@@ -41,13 +41,11 @@ flag=false
 while IFS= read line; do
     if [ "${line}" = "function sysCall_info()" ]; then
         flag=true
-        echo 1
     elif "${flag}"; then
         flag=false
         if [[ ! "${line}" =~ ^--.*$ ]]; then
             line="--${line}"
         fi
-        echo 2
     fi
 
     echo "${line}" >>"${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.tmp"
