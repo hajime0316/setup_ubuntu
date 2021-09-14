@@ -33,8 +33,25 @@ echo "# CoppeliaSimを起動するエイリアス" >>~/.bashrc
 echo "alias copsim='${LOCAL_COPPELIA_SIM_DIR}/coppeliaSim.sh'" >>~/.bashrc
 echo "" >>~/.bashrc
 
-# TODO: b0RemoteApiServerの有効化 動作検証
 # CoppeliaSim側におけるB0 Remote APIの有効化
 # b0RemoteApiServerのAddOnを起動時に自動でロードするようにする
-# mv ${LOCAL_COPPELIA_SIM_DIR}/simAddOnScript-b0RemoteApiServer.lua ${LOCAL_COPPELIA_SIM_DIR}/simAddOnScript_b0RemoteApiServer.lua
+# (remove the sysCall_info function in lua/b0RemoteApiServer.lua)
 # https://www.coppeliarobotics.com/helpFiles/en/b0RemoteApiServerSide.htm
+flag=false
+while IFS= read line; do
+    if [ "${line}" = "function sysCall_info()" ]; then
+        flag=true
+    elif "${flag}"; then
+        flag=false
+        if [[ ! "${line}" =~ ^--.*$ ]]; then
+            line="--${line}"
+        fi
+    fi
+
+    echo "${line}" >>"${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.tmp"
+done <"${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua"
+
+mv "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua" "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.bak"
+mv "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.tmp" "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua"
+
+chmod a+x "${LOCAL_COPPELIA_SIM_DIR}/lua/b0RemoteApiServer.lua"
