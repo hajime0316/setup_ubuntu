@@ -94,6 +94,13 @@ source install_tree_command.bash
 echo "[SETUP INFO] Finish installing tree command"
 echo ""
 
+# python3のインストール
+echo "[SETUP INFO] Start installing python3"
+echo ""
+source install_python3.bash
+echo "[SETUP INFO] Finish installing python3"
+echo ""
+
 # gitのインストール
 echo "[SETUP INFO] Start installing git"
 echo ""
