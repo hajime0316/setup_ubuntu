@@ -101,6 +101,13 @@ source install_python3.bash
 echo "[SETUP INFO] Finish installing python3"
 echo ""
 
+# atcoder-toolsのインストール
+echo "[SETUP INFO] Start installing atcoder_tools"
+echo ""
+source install_atcoder_tools.bash
+echo "[SETUP INFO] Finish installing atcoder_tools"
+echo ""
+
 # gitのインストール
 echo "[SETUP INFO] Start installing git"
 echo ""
