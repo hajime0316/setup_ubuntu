@@ -12,4 +12,4 @@ sudo_knowing_password() {
     echo "$password" | sudo -S "$@"
 }
 
-sudo snap install kolourpaint
+sudo_knowing_password snap install kolourpaint

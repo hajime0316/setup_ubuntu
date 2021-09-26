@@ -17,7 +17,7 @@ sudo_knowing_password() {
 
 sudo_knowing_password apt update
 sudo_knowing_password apt install -y python-pip
-sudo -H pip install vcstool
+sudo_knowing_password -H pip install vcstool
 
 echo '# vcstoolの入力補完を有効化' >> ~/.bashrc
 echo 'source /usr/local/share/vcstool-completion/vcs.bash' >> ~/.bashrc
