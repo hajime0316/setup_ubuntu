@@ -29,4 +29,4 @@ mkdir -p "${ATCODER_WORKSPACE_DIR}/.vscode"
 cp "${SCRIPT_DIR}/config_files/atcodertools/.atcodertools.toml" ~
 cp "${SCRIPT_DIR}/config_files/atcodertools/my_template.cpp" "${ATCODER_WORKSPACE_DIR}"
 cp -r "${SCRIPT_DIR}/config_files/atcodertools/ac-library" "${ATCODER_WORKSPACE_DIR}"
-cp "${SCRIPT_DIR}/config_files/atcodertools/*.json" "${ATCODER_WORKSPACE_DIR}/.vscode"
+cp "${SCRIPT_DIR}/config_files/atcodertools"/*.json "${ATCODER_WORKSPACE_DIR}/.vscode"
