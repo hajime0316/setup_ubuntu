@@ -23,3 +23,6 @@ sudo_knowing_password sh -c 'echo "deb [arch=amd64] https://packages.microsoft.c
 
 sudo_knowing_password apt update
 sudo apt install teams -y
+
+# 参考
+# https://pureinfotech.com/install-microsoft-teams-linux/#install_teams_ubuntu_linux
