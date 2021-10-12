@@ -1,0 +1,95 @@
+#!/bin/bash
+
+##############################################################################
+#  ROSのパッケージ開発におけるmasterへのマージ作業を，gitコマンドとして定義
+##############################################################################
+
+set -e
+
+# package.xmlのパスを取得
+package_xml_path=$(git rev-parse --show-toplevel)/package.xml
+
+# エラー処理，package.xmlがない場合は終了
+if [ ! -f $package_xml_path ]; then
+    echo "[git release info] package.xml does not exist."
+    echo '[git release info] Exit'
+    exit 1
+fi
+
+# 引数の確認とupdate_typeの指定
+readonly MAJOR="MAJOR"
+readonly MINOR="MINOR"
+readonly PATCH="PATCH"
+
+if [ $# -eq 0 ] || [ "${1^^}" = "${MINOR}" ]; then
+    update_type=${MINOR}
+elif [ "${1^^}" = "${MAJOR}" ]; then
+    update_type=${MAJOR}
+elif [ "${1^^}" = "${PATCH}" ]; then
+    update_type=${PATCH}
+else
+    echo ""
+    echo "[git release info] Invalid argument."
+    echo "[git release info] Usage: git release ([update_type])"
+    echo "[git release info] If update_type is 'major', major number will be updated."
+    echo "[git release info] If update_type is 'minor' or none argument, minor number will be updated."
+    echo "[git release info] If update_type is 'patch', patch number will be updated."
+    echo ""
+    echo '[git release info] Exit'
+    exit 1
+fi
+
+# masterブランチを最新の状態にする
+git fetch
+git checkout master
+git pull origin master
+
+# 現在のバージョン番号のを取得（package.xmlの<version>タグから生成）
+version_space_separated=$(cat ${package_xml_path} | grep -E "<version>.*</version>" | sed -r 's/^.*([0-9]+)\.([0-9]+)\.([0-9]+).*$/\1 \2 \3/')
+version_array=(${version_space_separated})
+readonly PREVIOUS_VERSION=${version_array[0]}.${version_array[1]}.${version_array[2]}
+
+# バージョンを上げる
+if [[ "${update_type}" == "${MAJOR}" ]]; then
+    version_array[0]=$((${version_array[0]} + 1))
+    version_array[1]=0
+    version_array[2]=0
+elif [[ "${update_type}" == "${MINOR}" ]]; then
+    version_array[1]=$((${version_array[1]} + 1))
+    version_array[2]=0
+elif [[ "${update_type}" == "${PATCH}" ]]; then
+    version_array[2]=$((${version_array[2]} + 1))
+fi
+
+# 生成したバージョン番号をVERSION変数に格納
+readonly VERSION=${version_array[0]}.${version_array[1]}.${version_array[2]}
+echo ""
+echo "[git release info] v${PREVIOUS_VERSION} -> v${VERSION}"
+echo ""
+
+# masterブランチにdevelopブランチをマージ
+return_string=$(git merge -m "Merge branch 'develop'" develop)
+if [[ ${return_string} == "Already up to date." ]]; then
+    echo '[git release info] "develop branch" already has merged "master branch".'
+    echo '[git release info] Exit'
+    exit 1
+fi
+
+# package.xmlのversionタグを編集
+sed -i -r "s@<version>[0-9]+\.[0-9]+\.[0-9]+</version>@<version>${VERSION}</version>@" ${package_xml_path}
+
+# "Update"コミットの作成
+git add -A
+git commit -m "Update: v${VERSION}"
+
+# tagを打つ
+git tag "v${VERSION}"
+
+# tagをリモートにプッシュ
+git push --tags
+
+# masterブランチのプッシュは，ユーザーにやらせる
+echo ""
+echo ""
+echo "[git release info] Confirm result and run below command."
+echo "[git release info] > git push origin master"

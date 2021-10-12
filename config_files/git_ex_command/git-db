@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# ローカルのマージ済みブランチの削除
+git branch --merged master | grep -vE '\*|develop|master' | xargs -I% git branch -d %
+
+# リモートのマージ済みブランチの削除
+git branch -r --merged master | grep -v -e master -e develop | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %
