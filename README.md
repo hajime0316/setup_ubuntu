@@ -33,3 +33,27 @@ Ubuntu 18.04で快適に開発するために必要なソフトウェアのイ�
 ./install_coppelia_sim.bash
 ./install_dropbox.bash
 ```
+
+### 開発用情報
+
+本プロジェクトのbashスクリプトは，最初に以下の定形行を入れることとする．
+
+```bash
+#!/bin/bash
+
+set -e
+
+sudo_knowing_password() {
+    if ! ${password+:} false; then
+        printf "[sudo] $USER のパスワード: "
+        read -s password
+    fi
+
+    echo "$password" | sudo -S "$@"
+}
+
+SCRIPT_DIR=$(
+    cd $(dirname $0)
+    pwd
+)
+```
