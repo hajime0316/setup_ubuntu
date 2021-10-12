@@ -16,7 +16,7 @@ SCRIPT_DIR=$(
     pwd
 )
 
-USER_BIN_DIR = ~/bin
+USER_BIN_DIR=~/bin
 
 mkdir -p ~/bin
-cp "${SCRIPT_DIR}/config_files/git_ex_command/*" "${USER_BIN_DIR}"
+cp ${SCRIPT_DIR}/config_files/git_ex_command/git-* ${USER_BIN_DIR}
