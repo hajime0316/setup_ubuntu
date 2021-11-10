@@ -5,3 +5,6 @@ git branch --merged master | grep -vE '\*|develop|master' | xargs -I% git branch
 
 # リモートのマージ済みブランチの削除
 git branch -r --merged master | grep -v -e master -e develop | sed -e 's% *origin/%%' | xargs -I% git push --delete origin %
+
+# リモート削除済みブランチの削除
+git branch -vv | grep -E '^.*: gone\].*$' | sed -r "s/^\s.(\S*) \S* .*: gone] .*$/\1/g" | grep -vE '\*|develop|master' | xargs -I% git branch -d %
